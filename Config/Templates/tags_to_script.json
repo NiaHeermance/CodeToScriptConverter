@@ -1,0 +1,29 @@
+{
+	"Initial Fronts": [
+		"    "
+	],
+	"Tags": {
+		"\"": {
+			"Mode": "narration",
+			"Character": "Name"
+		},
+		"think": {
+			"Mode": "thought",
+			"Character": "Name2"
+		},
+		"prose": {
+			"Mode": "prose_narration",
+			"Character": "Name3"
+		},
+		"stuff": {
+			"Mode": "scene_header"
+		},
+		"Bob": {
+			"Mode": "dialogue",
+			"Character": "Bobby"
+		}
+	},
+	"To Ignore": [
+		
+	]
+}

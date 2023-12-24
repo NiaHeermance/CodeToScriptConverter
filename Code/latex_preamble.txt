@@ -1,0 +1,7 @@
+\documentclass{article}
+\usepackage{enumitem} % Enumerate Entries.
+
+\usepackage{geometry} % Wide Margins.
+\setlength{\columnsep}{3cm}  % Setting the margins.
+
+\begin{document}
