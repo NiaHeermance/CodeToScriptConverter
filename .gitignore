@@ -1,2 +1,4 @@
 Config/Files
 Output
+Code/__pycache__
+Tests/__pycache__
