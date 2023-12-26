@@ -16,4 +16,4 @@ def get_document_title(file_name: str) -> str:
     file_name -- Name of a file, not including extension
     return: Appropiate title for script docuemnt
     """
-   pass
+    pass
