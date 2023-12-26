@@ -11,7 +11,7 @@
           inherit system;
         };
         tex = pkgs.texlive.combine {
-          inherit (pkgs.texlive) scheme-basic enumitem;
+          inherit (pkgs.texlive) scheme-basic enumitem geometry;
         };
       in
       {
