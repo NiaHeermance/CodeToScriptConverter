@@ -4,7 +4,7 @@
         "    cg",
         "    ",
         ""
-    ],// maybe put formatting in separate file?
+    ],
     "Tags": {
         "\"": {
             "Mode": "narration",
