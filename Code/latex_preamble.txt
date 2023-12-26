@@ -4,4 +4,6 @@
 \usepackage{geometry} % Wide Margins.
 \setlength{\columnsep}{3cm}  % Setting the margins.
 
+\setlength\parskip{1em plus 0.1em minus 0.2em}  % Space between paragraphs
+
 \begin{document}
