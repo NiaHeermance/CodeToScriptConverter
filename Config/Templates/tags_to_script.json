@@ -1,66 +1,53 @@
 {
-	"Initial Fronts": [
-		"    cg_",
-		"    cg",
-		"    ",
-		""
-	],// maybe put formatting in separate file?
-	"Tags": {
-		"\"": {
-			"Mode": "narration",
-			"Character": "Margaret"
-		},
-		"think": {
-			"Mode": "thought",
-			"Character": "Margaret"
-		},
-		"prose": {
-			"Mode": "prose_narration",
-			"Character": "Margaret"
-		},
-		"# *\n    #\n    #▗	▘": {
-			"Mode": "scene_header"
-		},
-		"vi": {
-			"Mode": "dialogue",
-			"Character": "Sylvia (Honey-Peach)"
-		},
-		"show": {
-			"Mode": "most_recent_non_main_character"
-		},
-		"menu": {
-			"Mode": "decision_tree"
-		}
-	},
-	"Main Characters": [
-		"Margaret",
-		"Peggy",
-		"Maggie",
-		"Gavin",
-		"Gabby",
-		"Julie",
-		"Sylvia",
-		"Felix",
-		"Felecia",
-		"Portia",
-	],
-	"To Ignore": [
-		"#,"
-		"play",
-		"hide",
-		"alt",
-		"stop",
-		"with",
-		"label",
-		"reset_audio",
-		"subchapter",
-		"scene",
-		"$",
-		"pause",
-		"window",
-		"if",
-		"else",
-		"elif",
-		"jump"
-	]
+    "Initial Fronts": [
+        "    cg_",
+        "    cg",
+        "    ",
+        ""
+    ],// maybe put formatting in separate file?
+    "Tags": {
+        "\"": {
+            "Mode": "narration",
+            "Character": "X"
+        },
+        "think": {
+            "Mode": "thought",
+            "Character": "X"
+        },
+        "prose": {
+            "Mode": "prose_narration",
+            "Character": "X"
+        },
+        "# *\n    #\n    #▗": {
+            "Mode": "scene_header"
+        },
+        "show": {
+            "Mode": "most_recent_non_main_character"
+        },
+        "menu": {
+            "Mode": "decision_tree"
+        }
+    },
+    "Main Characters": [
+
+    ],
+    "To Ignore": [
+        "#,"
+        "play",
+        "hide",
+        "alt",
+        "stop",
+        "with",
+        "label",
+        "reset_audio",
+        "subchapter",
+        "scene",
+        "$",
+        "pause",
+        "window",
+        "if",
+        "else",
+        "elif",
+        "jump"
+    ]
 }
