@@ -1,29 +1,66 @@
 {
 	"Initial Fronts": [
-		"    "
-	],
+		"    cg_",
+		"    cg",
+		"    ",
+		""
+	],// maybe put formatting in separate file?
 	"Tags": {
 		"\"": {
 			"Mode": "narration",
-			"Character": "Name"
+			"Character": "Margaret"
 		},
 		"think": {
 			"Mode": "thought",
-			"Character": "Name2"
+			"Character": "Margaret"
 		},
 		"prose": {
 			"Mode": "prose_narration",
-			"Character": "Name3"
+			"Character": "Margaret"
 		},
-		"stuff": {
+		"# *\n    #\n    #▗	▘": {
 			"Mode": "scene_header"
 		},
-		"Bob": {
+		"vi": {
 			"Mode": "dialogue",
-			"Character": "Bobby"
+			"Character": "Sylvia (Honey-Peach)"
+		},
+		"show": {
+			"Mode": "most_recent_non_main_character"
+		},
+		"menu": {
+			"Mode": "decision_tree"
 		}
 	},
+	"Main Characters": [
+		"Margaret",
+		"Peggy",
+		"Maggie",
+		"Gavin",
+		"Gabby",
+		"Julie",
+		"Sylvia",
+		"Felix",
+		"Felecia",
+		"Portia",
+	],
 	"To Ignore": [
-		
+		"#,"
+		"play",
+		"hide",
+		"alt",
+		"stop",
+		"with",
+		"label",
+		"reset_audio",
+		"subchapter",
+		"scene",
+		"$",
+		"pause",
+		"window",
+		"if",
+		"else",
+		"elif",
+		"jump"
 	]
 }
