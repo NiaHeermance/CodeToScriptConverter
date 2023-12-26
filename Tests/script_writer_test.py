@@ -1,8 +1,8 @@
 import os
 import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Code')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from script_writer import ScriptWriter
+from Code.script_writer import ScriptWriter
 
 sw = ScriptWriter("apple")
 sw.beginDocument("A Good Place")

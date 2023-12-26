@@ -8,7 +8,7 @@
 # _,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'
 
 from io import StringIO
-import doc_format
+import Code.doc_format as doc_format
 
 class ScriptWriter:
     # ----
