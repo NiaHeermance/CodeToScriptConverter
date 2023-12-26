@@ -7,3 +7,5 @@ into this directory to work with your chosen ``Ren'Py`` game.
 This repository requires PDFLaTeX to be installed with the enumitem and geometry packages.
 
 For help converting ``rpyc`` files into ``rpy`` files, use [rpatool](https://github.com/shizmob/rpatool).
+This [guide](https://www.reddit.com/r/DDLCMods/comments/tjj8ds/tormuses_guide_for_modding_ddlc_march_2022/) is
+useful.
