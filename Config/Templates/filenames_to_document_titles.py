@@ -8,6 +8,7 @@
 #
 # _,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'
 
+
 def get_document_title(file_name: str) -> str:
     """
     Given a file_name, returns an appropiate title for a document script based
