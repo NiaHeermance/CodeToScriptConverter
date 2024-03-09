@@ -27,8 +27,8 @@ class RenpyReader:
         """
         with open(file_path, "r") as rpy_file:
             self.rpy_file = rpy_file.readlines()
-        self.initialize_tags()
-        self.initialize_style()
+        self.__initializeTags()
+        self.__initializeStyle()
         self.indent_lev = 1
         self.index = 0
         self.blocks = deque()
@@ -39,13 +39,13 @@ class RenpyReader:
         if len(self.rpy_file) == 0:
             return "done"
 
-        while not self.at_end_of_file():
+        while not self.__atEndOfFile():
             line = self.rpy_file[self.index]
 
             if len(self.blocks) > 0:
-                check_if_exit_block(line)
+                __checkIfExitBlock(line)
             
-            line = remove_initial_front(line)
+            line = __removeInitialFront(line)
             if line == "skip":
                 self.index += 1
                 continue
@@ -68,7 +68,7 @@ class RenpyReader:
     # ----
 
     # Initializes tag member variables we will then scan for in the rpy file.
-    def initialize_tags(self):
+    def __initializeTags(self):
         with open("../Config/Files/tags_to_script.json", "r") as tags_to_script_file:
             tags_to_script = json.load(tags_to_script_file)
 
@@ -82,13 +82,13 @@ class RenpyReader:
 
     # Initializes a style guide so that we know what formatting to use for different
     # kinds of dialogue.
-    def initialize_style(self):
+    def __initializeStyle(self):
         with open("../Config/Files/style_guide.json", "r") as style_guide_file:
             self.style_guide = json.load(style_guide_file)
 
 
     # Returns true if the last read line was the end of the provided file.
-    def at_end_of_file(self):
+    def __atEndOfFile(self):
         line = self.rpy_file[self.index]
         return len(line) == 0 or line[-1] != '\n'
 
@@ -96,7 +96,7 @@ class RenpyReader:
     # Checks if the indention is so much less than self.indent_lev that we must have
     # exited from a choice prompt section or an path-exlclusive if-statement.
     # line -- current line we're investigating its indent
-    def check_if_exit_block(self, line: str): # TODO use if and menu stacks
+    def __checkIfExitBlock(self, line: str): # TODO use if and menu stacks
         indent_spot = self.indent_lev * len(self.indent)
         if indent_spot < 0 or len(self.blocks) == 0:
             return
@@ -116,7 +116,7 @@ class RenpyReader:
     # Also removes spaces based on self.indent level
     # line -- line to remove a starting front from as well as indentation
     # return: trimmed string
-    def remove_initial_front(self, line: str) -> str:
+    def __removeInitialFront(self, line: str) -> str:
         indent_spot = self.indent_lev * len(self.indent)
         chunk_before = line[:indent_spot]
         if not chunk_before.isspace():
