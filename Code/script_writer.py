@@ -41,8 +41,8 @@ class ScriptWriter:
         style     -- Way line is written. "bold," "italic," "underline," and "quote."
         """
         if self.in_sublist:
-            self.end_path_exclusive_lines()
-        self.write_line(character, text, style)
+            self.endPathExclusiveLines()
+        self.writeLine(character, text, style)
 
 
     def pathExclusiveLine(self, character: str, text: str, style: str):
@@ -53,19 +53,8 @@ class ScriptWriter:
         style     -- Way line is written. "bold," "italic," "underline," and "quote."
         """
         if not self.in_sublist:
-            self.begin_path_exclusive_lines()
-        self.write_line(character, text, style)
-
-
-    def writeCharacterList(self, io_buffer, characters):
-        if len(characters) == 0:
-            return
-        io_buffer.write("Characters: ")
-        for i, character in enumerate(characters):
-            if i != len(characters)-1:
-                io_buffer.write(f'{character}, ')
-            else:
-                io_buffer.write(f'{character}\n\n')
+            self.beginPathExclusiveLines()
+        self.writeLine(character, text, style)
 
 
     def beginDocument(self, name: str):
@@ -139,16 +128,30 @@ class ScriptWriter:
     # character -- Name of character saying the line.
     # text      -- Text in line
     # style     -- Way line is written. "bold," "italic," "underline," and "quote."
-    def write_line(self, character: str, text: str, style: str):
+    def writeLine(self, character: str, text: str, style: str):
         line = f'{character}: {doc_format.get_text_with_style(text, style)}'
         self.scene_buffer.write(doc_format.list_item(line))
         self.scene_characters.add(character)
 
 
+    # Prints character list to the buffer provided.
+    # io_buffer  -- Buffer to print characters to.
+    # characters -- list of character names to print
+    def writeCharacterList(self, io_buffer: StringIO, characters: list):
+        if len(characters) == 0:
+            return
+        io_buffer.write("Characters: ")
+        for i, character in enumerate(characters):
+            if i != len(characters)-1:
+                io_buffer.write(f'{character}, ')
+            else:
+                io_buffer.write(f'{character}\n\n')
+
+
     # Sets up the document for adding path-exclusive lines.
-    def begin_path_exclusive_lines(self):
+    def beginPathExclusiveLines(self):
         if self.in_sublist:
-            self.end_path_exclusive_lines()
+            self.endPathExclusiveLines()
 
         self.scene_buffer.write(doc_format.list_item(""))
         self.scene_buffer.write(doc_format.start_list("letter"))
@@ -156,6 +159,6 @@ class ScriptWriter:
 
 
     # Ends a block of path-exclusive lines.
-    def end_path_exclusive_lines(self):
+    def endPathExclusiveLines(self):
         self.scene_buffer.write(doc_format.end_list())
         self.in_sublist = False
