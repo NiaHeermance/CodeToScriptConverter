@@ -10,30 +10,60 @@ import os
 #
 # _,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'
 
+from Code.dialogue import TextStyle
+
 def bold(text: str) -> str:
     return f'\\textbf{{{text}}}'
+
+def boldLeft() -> str:
+    return "\\textbf{"
+
+def boldRight() -> str:
+    return "}"
+
 
 def italics(text: str) -> str:
     return f'\\textit{{{text}}}'
 
+def italicsLeft() -> str:
+    return "\\textit{"
+
+def italicsRight() -> str:
+    return "}"
+
+
 def underline(text: str) -> str:
     return f'\\underline{{{text}}}'
+
+def underlineLeft() -> str:
+    return "\\underline{"
+
+def underlineRight() -> str:
+    return "}"
+
 
 def quote(text: str) -> str:
         return f"``{text}''"
 
-def get_text_with_style(text: str, style: str) -> str:
+def quoteLeft() -> str:
+    return "``"
+
+def quoteRight() -> str:
+    return "''"
+
+
+def get_text_with_style(text: str, style: TextStyle) -> str:
     """
-    Given a style ("bold", "underline", "italics", and "quote"), returns provided text in
+    Given a style (NORMAL, BOLD, ITALICS, UNDERLINE, QUOTE), returns provided text in
     said style.
 
     text -- The text we want to format.
     style -- The style for the text, see above list.
     """
-    if style == "normal":
+    if style == TextStyle.NORMAL:
         return text
     thismodule = sys.modules[__name__]
-    style_func = getattr(thismodule, style)
+    style_func = getattr(thismodule, style.name.lower())
     return style_func(text)
 
 
